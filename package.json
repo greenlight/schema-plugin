@@ -1,0 +1,39 @@
+{
+  "version": "0.0.0-development",
+  "name": "@greenlight/schema-plugin",
+  "description": "JSON Schema for Greenlight Plugin",
+  "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
+  "homepage": "https://greenlight.ci/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenlight-ci/schema-plugin.git"
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "keywords": [
+    "greenlight",
+    "plugin",
+    "schema"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "spec"
+  ],
+  "bugs": {
+    "url": "https://github.com/greenlight-ci/schema-plugin/issues"
+  },
+  "scripts": {
+    "test": "npm run test:tap",
+    "test:tap": "tap test --100 --coverage-report=lcov --no-browser"
+  },
+  "devDependencies": {
+    "ajv": "^6.1.1",
+    "js-yaml": "^3.10.0",
+    "tap": "^11.1.1"
+  }
+}

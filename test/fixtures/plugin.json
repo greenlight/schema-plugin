@@ -1,0 +1,10 @@
+{
+  "$schema": "../../spec/latest/schema.json",
+  "greenlight": "1.0.0",
+  "name": "foolint",
+  "description": "foo linting tool",
+  "drivers": {
+    "filesystem": ["file"],
+    "git": true
+  }
+}
