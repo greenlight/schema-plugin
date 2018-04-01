@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.greenlight.ci/environments/1.0.0/schema.json",
+  "$id": "https://schemas.greenlight.ci/plugin/1.0.0/schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Greenlight Plugin Schema",
   "description": "JSON Schema for Greenlight Plugins",
@@ -22,7 +22,7 @@
     },
     "greenlight": {
       "title": "Schema Version",
-      "description": "Used to determine what Environments Schema to validate against",
+      "description": "Used to determine what Plugin Schema to validate against",
       "type": "string",
       "pattern": "\\bv?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[\\da-z-]+(?:\\.[\\da-z-]+)*)?(?:\\+[\\da-z-]+(?:\\.[\\da-z-]+)*)?\\b"
     },
