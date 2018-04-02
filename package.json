@@ -6,7 +6,7 @@
   "homepage": "https://greenlight.ci/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greenlight-ci/schema-plugin.git"
+    "url": "https://github.com/greenlight/schema-plugin.git"
   },
   "license": "ISC",
   "main": "index.js",
@@ -25,7 +25,7 @@
     "spec"
   ],
   "bugs": {
-    "url": "https://github.com/greenlight-ci/schema-plugin/issues"
+    "url": "https://github.com/greenlight/schema-plugin/issues"
   },
   "scripts": {
     "test": "npm run test:tap",
