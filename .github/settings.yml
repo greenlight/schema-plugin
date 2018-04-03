@@ -1,6 +1,6 @@
 repository:
   name: schema-plugin
-  description: JSON Schema for Greenlight Plugins
+  description: 📃 JSON Schema for Greenlight Plugins
   topics: greenlight, schema, jsonschema, plugin
   homepage: https://greenlight.ci/
   private: false
