@@ -1,12 +1,8 @@
-const { join } = require('path')
-const { readFileSync } = require('fs')
-const { safeLoad } = require('js-yaml')
 const { test } = require('tap')
 const Ajv = require('ajv')
+const spawn = require('@ahmadnassri/spawn-promise')
 
-const { schema } = require('..')
-const json = require('./fixtures/plugin.json')
-const yaml = readFileSync(join(__dirname, 'fixtures', 'plugin.yml'), 'utf8')
+const schema = require('..')
 
 const ajv = new Ajv()
 
@@ -17,14 +13,18 @@ test('schema compiles successfully', assert => {
   assert.type(ajv.compile(schema), 'function')
 })
 
-test('valid json file', assert => {
+test('valid data', async assert => {
   assert.plan(1)
 
-  assert.ok(ajv.validate(schema, json))
-})
+  // docker run args
+  const args = [
+    'inspect',
+    '--format="{{json .ContainerConfig.Labels}}"',
+    'greenlight/foo'
+  ]
 
-test('valid yaml file', assert => {
-  assert.plan(1)
+  const { stdout } = await spawn('docker', args, { shell: true })
+  const data = JSON.parse(stdout)
 
-  assert.ok(ajv.validate(schema, safeLoad(yaml)))
+  assert.ok(ajv.validate(schema, data))
 })

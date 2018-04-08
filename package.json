@@ -28,12 +28,14 @@
     "url": "https://github.com/greenlight/schema-plugin/issues"
   },
   "scripts": {
+    "pretest": "npm run build",
+    "build": "docker build -t greenlight/foo test/fixtures",
     "test": "npm run test:tap",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser"
   },
   "devDependencies": {
+    "@ahmadnassri/spawn-promise": "^1.1.2",
     "ajv": "^6.4.0",
-    "js-yaml": "^3.11.0",
     "tap": "^11.1.3"
   }
 }

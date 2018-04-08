@@ -23,7 +23,7 @@ npm install --production --save @greenlight/schema-plugin
 ## API
 
 ```js
-const { schema, regex } = require('@greenlight/schema-plugin')
+const schema = require('@greenlight/schema-plugin')
 ```
 
 ---

@@ -12,99 +12,33 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "greenlight",
-    "name",
-    "drivers"
+    "greenlight.version",
+    "greenlight.name"
   ],
   "properties": {
     "$schema": {
       "type": "string"
-    },
-    "greenlight": {
-      "title": "Schema Version",
-      "description": "Used to determine what Plugin Schema to validate against",
-      "type": "string",
-      "pattern": "\\bv?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[\\da-z-]+(?:\\.[\\da-z-]+)*)?(?:\\+[\\da-z-]+(?:\\.[\\da-z-]+)*)?\\b"
     },
     "version": {
       "title": "Plugin Version",
       "description": "Optional Plugin Version",
       "$ref": "#/definitions/nonEmptyString"
     },
-    "name": {
+    "greenlight.version": {
+      "title": "Schema Version",
+      "description": "Used to determine what Plugin Schema to validate against",
+      "type": "string",
+      "pattern": "\\bv?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[\\da-z-]+(?:\\.[\\da-z-]+)*)?(?:\\+[\\da-z-]+(?:\\.[\\da-z-]+)*)?\\b"
+    },
+    "greenlight.name": {
       "$ref": "#/definitions/nonEmptyString",
       "title": "Plugin Name",
       "description": "Unique and descriptive name for your plugin"
     },
-    "description": {
+    "greenlight.description": {
       "$ref": "#/definitions/nonEmptyString",
       "title": "Plugin Description",
       "description": "Full description of the plugin and it's functionality"
-    },
-    "drivers": {
-      "title": "Supported drivers",
-      "description": "List of supported drivers",
-      "type": "object",
-      "additionalProperties": false,
-      "minProperties": 1,
-      "properties": {
-        "filesystem": {
-          "title": "Filesystem Driver",
-          "description": "Declare support for filesystem scanning",
-          "oneOf": [
-            { "type": "boolean" },
-            { "type": "array",
-              "minItems": 1,
-              "uniqueItems": true,
-              "additionalItems": false,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "file"
-                ]
-              }
-            }
-          ]
-        },
-        "git": {
-          "title": "Git Driver",
-          "description": "Declare support for git",
-          "oneOf": [
-            { "type": "boolean" },
-            { "type": "array",
-              "minItems": 1,
-              "uniqueItems": true,
-              "additionalItems": false,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "commit"
-                ]
-              }
-            }
-          ]
-        },
-        "github": {
-          "title": "Github Driver",
-          "description": "Declare support for Github",
-          "oneOf": [
-            { "type": "boolean" },
-            { "type": "array",
-              "minItems": 1,
-              "uniqueItems": true,
-              "additionalItems": false,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "repo",
-                  "issue",
-                  "pull-request"
-                ]
-              }
-            }
-          ]
-        }
-      }
     }
   }
 }
