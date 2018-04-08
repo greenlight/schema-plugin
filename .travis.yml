@@ -1,5 +1,7 @@
 if: tag IS blank
 
+services: docker
+
 language: node_js
 
 node_js: 9
