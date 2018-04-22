@@ -39,10 +39,10 @@ Plugin data is expected to be declared using [`Dockerfile` labels][labels] and s
 
 name                       | type     | required | default | description                                          
 -------------------------- | -------- | -------- | ------- | -----------------------------------------------------
-**version**                | `String` | ✖        | `-`     | Optional Plugin version                              
-**greenlight.version**     | `String` | ✔        | `-`     | Spec version. Format must follow [semver][]          
-**greenlight.name**        | `String` | ✔        | `-`     | Unique and descriptive name for your plugin          
-**greenlight.description** | `String` | ✖        | `-`     | Full description of the plugin and it's functionality
+**version**                | `String` | ✗        | `-`     | Optional Plugin version                              
+**greenlight.version**     | `String` | 🗸        | `-`     | Spec version. Format must follow [semver][]          
+**greenlight.name**        | `String` | 🗸        | `-`     | Unique and descriptive name for your plugin          
+**greenlight.description** | `String` | ✗        | `-`     | Full description of the plugin and it's functionality
 
 ---
 
